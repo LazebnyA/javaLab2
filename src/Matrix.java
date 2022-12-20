@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class Matrix {
+public class Matrix implements MatrixInterface{
     private int rows, columns; // n - number of rows, m - number of columns
     private int[][] matrixI; // instance field of matrix itself
 
@@ -16,19 +16,7 @@ public class Matrix {
         toFill();
     }
 
-    public Matrix(Matrix matrix) {
-        rows = matrix.rows;
-        columns = matrix.columns;
-        matrixI = new int[rows][columns];
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                this.matrixI[i][j] = matrix.matrixI[i][j];
-            }
-        }
-    }
-
-    public Matrix(ImmutableMatrix matrix) {
+    public Matrix(MatrixInterface matrix) {
         rows = matrix.getRows();
         columns = matrix.getColumns();
 

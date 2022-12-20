@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public final class ImmutableMatrix {
+public final class ImmutableMatrix implements MatrixInterface {
     private final int rows, columns;
     private final int[][] matrixI; // instance field of matrix itself
 
@@ -18,20 +18,7 @@ public final class ImmutableMatrix {
         toFill();
     }
 
-    public ImmutableMatrix(Matrix matrix) {
-        rows = matrix.getRows();
-        columns = matrix.getColumns();
-
-        matrixI = new int[rows][columns];
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                matrixI[i][j] = matrix.toFindEl(i, j);
-            }
-        }
-    }
-
-    public ImmutableMatrix(ImmutableMatrix matrix) {
+    public ImmutableMatrix(MatrixInterface matrix) {
         rows = matrix.getRows();
         columns = matrix.getColumns();
 
