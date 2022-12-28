@@ -69,13 +69,13 @@ public class Matrix implements MatrixInterface{
     }
 
     public int[] toFindRow(int rowIndex) {
-        int[] row = new int[rows];
+        int[] row = new int[columns];
 
         int rowElsCounter = 0;
         for (int i = 0; i < columns; i++) {
             row[rowElsCounter] = matrixI[rowIndex][i];
             rowElsCounter += 1;
-            if (rowElsCounter == rows) {
+            if (rowElsCounter == columns) {
                 break;
             }
         }
@@ -85,13 +85,13 @@ public class Matrix implements MatrixInterface{
     }
 
     public int[] toFindColumn(int columnIndex) {
-        int[] column = new int[columns];
+        int[] column = new int[rows];
 
         int colElsCounter = 0;
         for (int i = 0; i < rows; i++) {
             column[colElsCounter] = matrixI[i][columnIndex];
             colElsCounter += 1;
-            if(colElsCounter == columns) {
+            if(colElsCounter == rows) {
                 break;
             }
         }
